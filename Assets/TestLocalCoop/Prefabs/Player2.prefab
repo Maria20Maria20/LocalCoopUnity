@@ -155,9 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beeca3f375b956347ba57195925b263e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PickupedObject: {fileID: 0}
+  actionMap: 1
   interactableTooltip: L
   tooltipPivotX: -2
-  isFirstPlayer: 0
   _characterController: {fileID: 8872976105033090778}
 --- !u!143 &8872976105033090778
 CharacterController:

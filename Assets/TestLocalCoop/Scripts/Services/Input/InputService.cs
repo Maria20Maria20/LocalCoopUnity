@@ -25,22 +25,20 @@ namespace Scripts.Services.Input
             _playerData = playerData;
             _controls ??= new Controls();
             _controls.Enable();
-            if (_playerData.IsFirstPlayer)
-            {
-                SetCallback(_controls.Player1);
-            }
-            else
-            {
-                SetCallback(_controls.Player2);
-            }
+            SetActionMap(_playerData.ActionMap);
         }
-        public void SetCallback(Controls.Player1Actions playerActions)
+        public void SetActionMap(ActionMap actionMap)
         {
-            playerActions.SetCallbacks(this);
-        }
-        public void SetCallback(Controls.Player2Actions playerActions)
-        {
-            playerActions.SetCallbacks(this);
+            switch (actionMap)
+            {
+                case ActionMap.Player1:
+                    Controls.Player1.SetCallbacks(this);
+                    break;
+
+                case ActionMap.Player2:
+                    Controls.Player2.SetCallbacks(this);
+                    break;
+            }
         }
         public void OnMovementTwo(InputAction.CallbackContext context)
         {

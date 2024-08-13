@@ -14,9 +14,9 @@ namespace TestLocalCoop.Scripts.Gameplay.Data
     {
         #region Variables
         public GameObject PickupedObject;
+        [SerializeField] private ActionMap actionMap;
         [SerializeField] private string interactableTooltip;
         [SerializeField] private float tooltipPivotX;
-        [SerializeField] private bool isFirstPlayer;
         [SerializeField] private CharacterController _characterController;
         private float _speed = 10;
         private IInputService _inputService;
@@ -29,7 +29,7 @@ namespace TestLocalCoop.Scripts.Gameplay.Data
         public IPlayerUIFactory PlayerUIFactory => _playerUIFactory;
         public string InteractableTooltip => interactableTooltip;
         public float TooltipPivotX => tooltipPivotX;
-        public bool IsFirstPlayer => isFirstPlayer;
+        public ActionMap ActionMap => actionMap;
         public CharacterController CharacterController => _characterController;
         #endregion
         [Inject]

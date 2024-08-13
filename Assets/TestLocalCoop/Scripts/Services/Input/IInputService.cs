@@ -10,8 +10,7 @@ namespace Scripts.Services.Input
         Controls Controls { get; set; }
         Vector2 DirectionMove {  get; set; }
         Action OnInteractable { get; set; }
-        void SetCallback(Controls.Player1Actions playerActions);
-        void SetCallback(Controls.Player2Actions playerActions);
+        void SetActionMap(ActionMap actionMap);
     }
 
 }
